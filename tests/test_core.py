@@ -39,3 +39,10 @@ def test_validate_incorret_type(type_system):
     """
     with pytest.raises(TypeValidationError):
         type_system.validate(123,'String')
+
+def test_validate_unregistered_type(type_system):
+    """
+    Test the validation of values with unregistered types, expecting TypeValidationError.
+    """
+    with pytest.raises(TypeValidationError):
+        type_system.validate('Hello','UnregisteredType')
