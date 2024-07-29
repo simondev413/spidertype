@@ -33,3 +33,9 @@ def test_validate_corret_type(type_system):
     type_system.validate('Hello','String')
     type_system.validate(123,'Integer')
 
+def test_validate_incorret_type(type_system):
+    """
+    Test the valiadtion of values with incorret type, expecting a TypeValidation Error.
+    """
+    with pytest.raises(TypeValidationError):
+        type_system.validate(123,'String')
