@@ -2,14 +2,18 @@ from .validation import validate_type
 from .exceptions import TypeValidationError,RegistrationError, TypeNotFoundError
 
 
-class SpiderType:
+class SpiderTypeMap:
     def __init__(self):
         self.types = {}
 
     
     def register_type(self,name,type_def):
         """
-        This method allows to register a new type.
+        Registers a new custom type.
+
+        Args:
+            name (str): Name of the type.
+            type_def (SpiderType): Instance of the custom type.
         """
         try:
             if name in self.types:
@@ -20,7 +24,13 @@ class SpiderType:
 
     def get_type(self,name):
         """ 
-        This method return the type definitions of registered types.
+        Retrieves a registered custom type by name.
+
+        Args:
+            name (str): Name of the custom type.
+
+        Return:
+            SpiderType: Instance os the custom type.
         """
         try:
             return self.types.get(name)
@@ -30,7 +40,11 @@ class SpiderType:
 
     def validate(self,value,type_name):
         """
-        This method verify if a value match with the type registered.
+        Validate a value against an expected type.
+
+        Args:
+            value: Value to be validated.
+            type_name (SpiderType): Expected type to validate against. 
         """
         type_def = self.get_type(type_name)
         if not type_def:

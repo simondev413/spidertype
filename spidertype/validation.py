@@ -3,7 +3,13 @@ from .exceptions import TypeValidationError
 
 def static_type_check(func):
     """
-    This decorator verify the args´s type of a function in execution time using annotations of type. 
+    This decorator to enforce static type checking on function arguments and return values.
+
+    Args:
+        func (callable): Function to be decorated.
+    
+        Returns:
+            callabe: Wrappedfunction with type checking.
     """
     annotations = func.__annotations__
 

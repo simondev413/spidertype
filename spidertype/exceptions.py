@@ -1,24 +1,27 @@
 class SpiderTypeError(Exception):
+    """
+    Base exception for all erros in the SpiderType Library.
+    """
     def __init__(self,message):
         super().__init__(message)
 
 class TypeValidationError(SpiderTypeError):
     """
-    Excepetion raised when a type validation fail.
+    Excepetion raised when a type validation fails.
     """
     def __init__(self,message):
         super().__init__(message)
 
 class RegistrationError(SpiderTypeError):
     """
-    Exception raised when occur an error during type registation.
+    Exception raised when an error occurs during type registration.
     """
     def __init__(self, message):
         super().__init__(message)
 
 class TypeNotFoundError(SpiderTypeError):
     """
-    Exception raised when a specific type is not found
+    Exception raised when a specified type is not found.
     """
     def __init__(self, message):
         super().__init__(message)
