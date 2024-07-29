@@ -1,4 +1,3 @@
-from .types import Type
 from .validation import validate_type
 from .exceptions import TypeValidationError
 
