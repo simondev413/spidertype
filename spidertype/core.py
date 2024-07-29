@@ -2,7 +2,7 @@ from .validation import validate_type
 from .exceptions import TypeValidationError,RegistrationError, TypeNotFoundError
 
 
-class SpiderTypeSystem:
+class SpiderType:
     def __init__(self):
         self.types = {}
 

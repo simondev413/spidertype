@@ -7,13 +7,13 @@ for root, dirs, files in os.walk(os.path.dirname(r'D:\T.I\Projetos\spidertype'))
 
 
 import pytest
-from spidertype.core import SpiderTypeSystem
+from spidertype.core import SpiderType
 from spidertype.exceptions import TypeValidationError
 
 
 @pytest.fixture
 def type_system():
-    system = SpiderTypeSystem()
+    system = SpiderType()
     system.register_type('String',str)
     system.register_type('Integer',int)
     return system
