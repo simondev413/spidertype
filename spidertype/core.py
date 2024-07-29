@@ -1,5 +1,5 @@
 from .validation import validate_type
-from .exceptions import TypeValidationError
+from .exceptions import TypeValidationError,RegistrationError, TypeNotFoundError
 
 
 class SpiderTypeSystem:
@@ -11,15 +11,22 @@ class SpiderTypeSystem:
         """
         This method allows to register a new type.
         """
-        if name in self.types:
-            raise ValueError(f"Type {name} is already registered.")
-        self.types[name] = type_def
+        try:
+            if name in self.types:
+                raise RegistrationError(f"Type {name} is already registered.")
+            self.types[name] = type_def
+        except RegistrationError:
+            raise RegistrationError(f"Type don´t was registered.")
 
     def get_type(self,name):
-        """
+        """ 
         This method return the type definitions of registered types.
         """
-        return self.types.get(name)
+        try:
+            return self.types.get(name)
+        except TypeNotFoundError:
+            raise TypeNotFoundError(f"Type not found: {name}")
+
 
     def validate(self,value,type_name):
         """
