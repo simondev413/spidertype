@@ -15,3 +15,11 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
+
+Indeces and tables
+==================
+
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
