@@ -1,7 +1,7 @@
 import os
 import sys
 
-for root, dirs, files in os.walk(os.path.dirname(os.path.abspath('..'))):
+for root, dirs, files in os.walk(os.path.dirname(r'D:\T.I\Projetos\spidertype')):
     for dir in dirs:
         sys.path.append(dir)
 
@@ -11,7 +11,6 @@ from spidertype.core import SpiderTypeSystem
 from spidertype.exceptions import TypeValidationError
 
 
-
 @pytest.fixture
 def type_system():
     system = SpiderTypeSystem()
@@ -19,7 +18,7 @@ def type_system():
     system.register_type('Integer',int)
     return system
 
-def test_register_and_get_type(type_sytem):
+def test_register_and_get_type(type_system):
     """
     Verify if the types are registered and retrieved propely.
     """
