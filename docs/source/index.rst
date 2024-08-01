@@ -10,8 +10,8 @@ Welcome to SpiderType's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   introduction
-   usage
+   Introduction
+   Usage
    api
 
 .. include:: links.rst
