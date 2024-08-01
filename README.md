@@ -18,8 +18,8 @@ SpiderType is a Python library designed for handling and managing data types wit
 Clone the GitHub repository and install the requirements:
 
 ```bash
-git clone https://github.com/your-username/SpiderType.git
-cd SpiderType
+git clone https://github.com/simondev413/spidertype.git
+cd spidertype
 pip install -r requirements.txt
 ```
 
